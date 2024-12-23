@@ -1,0 +1,29 @@
+.top_logo {
+  text-align: start;
+}
+
+.book_appointment_sidebar_wepper,
+.club_membership_show {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  transition: right 0.3s ease-in;
+}
+
+.book_appointment_sidebar_wepper.open,
+.club_membership_show.open {
+  right: 0;
+}
+
+
+.fqs_arrow {
+  text-align: end;
+  margin-top: -24px;
+  margin-right: -23px;
+}
+
+.why_chosse_image{
+  text-align: start;
+}
+

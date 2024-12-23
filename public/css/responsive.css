@@ -1,0 +1,1708 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---For Laptop---*/
+@media (max-width: 1800px) {}
+
+@media only screen and (max-width: 1550px) {}
+
+@media(min-width:1200px) {}
+
+@media(max-width:1440px) {}
+
+/*---For Laptop---*/
+@media (min-width: 1200px) and (max-width: 1400px) {}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .book_appointment_sidebar_wepper .book_appointment_inner {
+        width: 85%;
+    }
+
+    .club_member_ship_image_uplode .uplod_data {
+        width: 100%;
+    }
+
+    .club_membership_show .book_appointment_inner {
+        width: 85%;
+    }
+
+    .banner_content h1 {
+        width: 100%;
+    }
+
+    .with_service_right_side_wepper {
+        position: unset;
+    }
+
+    .with_service_right_side_wepper img {
+        width: 100%;
+        height: unset;
+    }
+
+    .withus_img_book img {
+        width: 164px;
+        margin-top: 27px;
+    }
+
+    .withus_bg {
+        width: 265px;
+        margin: auto;
+    }
+
+    .login_hedding {
+        padding: 78px 20px 20px 20px;
+    }
+
+    .only_login_hight {
+        height: 500px;
+        margin-top: 68px !important;
+    }
+
+    .login_text_wepper {
+        width: 84%;
+    }
+
+    .sign_up_hedding h2 {
+        width: 100%;
+    }
+
+    .signup_set_only {
+        margin-bottom: 40px;
+    }
+
+    .login_wepper {
+        height: 100%;
+    }
+
+    .book_services_bg::before {
+        background-color: #0000009e;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .book_content {
+        width: 100%;
+    }
+
+    .book_content {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+    }
+
+    .air_conditioner_content h2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .air_conditioners_box img {
+        width: 120px;
+        height: 130px;
+    }
+
+    .air_conditioners_bg img {
+        height: 210px;
+    }
+
+    .air_conditioner_content a {
+        width: 80%;
+        font-size: 11px;
+        line-height: 24px;
+        height: unset;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 11px;
+    }
+
+    .air_conditioner_content {
+        top: 60px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content span a {
+        margin-bottom: 8px;
+    }
+
+    .book_content h6 {
+        margin-top: 15px !important;
+    }
+
+    .book_content h2 {
+        font-size: 20px;
+    }
+
+    .Add_quotation_left_imgdata_Weeper .book_content {
+        height: 54%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1023px) {
+    .login_hedding {
+        padding: 78px 20px 20px 20px;
+    }
+
+    .only_login_hight {
+        height: 500px;
+        margin-top: 68px !important;
+    }
+
+    .login_text_wepper {
+        width: 84%;
+    }
+
+    .sign_up_hedding h2 {
+        width: 100%;
+    }
+
+    .signup_set_only {
+        margin-bottom: 40px;
+    }
+
+    .login_wepper {
+        height: 100%;
+    }
+
+    .book_appointment_sidebar_wepper .book_appointment_inner {
+        width: 85%;
+    }
+
+    .air_conditioner_content h2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .air_conditioners_box img {
+        width: 120px;
+        height: 130px;
+    }
+
+    .air_conditioners_bg img {
+        height: 210px;
+    }
+
+    .air_conditioner_content a {
+        width: 80%;
+        font-size: 11px;
+        line-height: 24px;
+        height: unset;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 11px;
+    }
+
+    .air_conditioner_content {
+        top: 60px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content span a {
+        margin-bottom: 8px;
+    }
+
+}
+
+@media (min-width: 1199px) and (max-width: 991px) {
+    .add_to_cart_wepper {
+        margin-right: 0px !important;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1250px) {
+    .our_ac_service_wepper .col-lg-3 {
+        width: 33%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    #msform {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .add_to_cart_wepper {
+        margin-right: 63px !important;
+    }
+
+    .club_member_ship {
+        right: 30px !important;
+    }
+
+    .cart_icon {
+        width: 30px;
+    }
+
+    .user_profile_icon {
+        width: 22px;
+    }
+
+    .time_logo {
+        align-items: center;
+    }
+
+    .time_logo i {
+        font-size: 14px;
+    }
+
+    .time_logo p {
+        font-size: 11px;
+    }
+
+    .header .justify-content-center {
+        justify-content: start !important;
+    }
+
+    .header .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+
+    /* .add_to_cart_wepper {
+        margin-right: 76px !important;
+    } */
+
+    .club_member_ship img {
+        width: 80px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1800px) {
+    .header .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 5px 5px;
+    }
+
+    .club_member_ship {
+        right: 20px;
+    }
+
+    .add_to_cart_wepper {
+        margin-right: 113px;
+    }
+}
+
+@media (max-width: 1199px) {}
+
+
+/*---For Horizental iPad---*/
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 991px) {}
+
+@media (min-width: 768px) {}
+
+/*---For Vertical iPad---*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+    .with_service_right_side_wepper {
+        display: none;
+    }
+
+    .with_us_wepper h2 {
+        width: 100%;
+    }
+
+    .why_choose_imgdata img {
+        width: 100%;
+    }
+
+    .quality_logo_wepper img {
+        width: 70px;
+    }
+
+    .Reach_hedding {
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+
+    .book_appointment_sidebar_wepper .book_appointment_inner {
+        width: 100%;
+    }
+
+    .banner_content {
+        position: absolute;
+        top: 39px;
+        left: 30px;
+    }
+
+    .banner_content {
+        margin-top: 0px;
+    }
+
+    .banner_content h1 {
+        line-height: 46.213px;
+        width: 70%;
+        font-size: 40.216px;
+    }
+
+    .banner_content a {
+        margin-top: 8px;
+    }
+
+    .ac_services_box {
+        margin: auto;
+    }
+
+    .hedding_why_choose h2 {
+        font-size: 19px;
+        line-height: 30px;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+
+    .withus_bg {
+        width: 295px;
+        margin: auto;
+    }
+
+
+    .withus_img_book img {
+        width: 194px;
+    }
+
+    .withus_bg h3 {
+        font-size: 20px;
+    }
+
+    .with_service2 {
+        margin-top: -10px;
+    }
+
+    .our_process_hedding h2 {
+        width: 100%;
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .our_process_hedding span {
+        width: 100%;
+    }
+
+    .our_process_content {
+        padding: 20px;
+    }
+
+    .customer_box {
+        margin-bottom: 20px;
+    }
+
+    .quick_link_inner {
+        display: block;
+    }
+
+    .book_content {
+        left: 0;
+        right: 0;
+        width: 50%;
+        margin-left: auto;
+    }
+
+    .book_content h2 {
+        font-size: 20px;
+    }
+
+    /* .product_details_img_inner {
+        display: block;
+    } */
+
+    .product_details_img_inner img {
+        margin-bottom: 20px;
+    }
+
+    .product_detalis_content {
+        margin-left: 0;
+    }
+
+    .product_details_img_right_side {
+        /* display: flex;
+        gap: 14px; */
+    }
+
+    .product_details_img_right_side img {
+        width: 100px;
+    }
+
+    .product_detalis_page .our_product_inner_wepper {
+        width: 100%;
+        display: block;
+        column-count: 2;
+    }
+
+    .product_detalis_page .air_conditioner_content a {
+        width: 83%;
+    }
+
+    .air_conditioners_bg {
+        margin-top: -20px;
+    }
+
+    .air_conditioner_content {
+        top: 45px;
+    }
+
+    .air_conditioner_content span {
+        margin-bottom: 24px;
+    }
+
+    .book_services_bg::before {
+        background-color: #0000009e;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .Add_quotation_left_imgdata_Weeper img {
+        width: 100%;
+    }
+
+    .book_content {
+        width: 100%;
+    }
+
+    .Add_quotation_left_imgdata_Weeper .book_content {
+        height: 55%;
+    }
+
+    .book_content h6 {
+        margin-top: 10px !important;
+    }
+
+    .book_content a img {
+        width: unset;
+    }
+
+    .book_content a {
+        width: 188px;
+        height: 35px;
+        font-size: 14.009px;
+        margin-top: 8px !important;
+        line-height: 34px;
+    }
+
+    .Add_quotation_content {
+        display: block;
+        padding: 16px;
+    }
+
+    .add_quotation_color_sec {
+        padding: 0;
+        border: unset;
+        border-radius: 9px;
+    }
+
+    .Add_quotation_img_data img {
+        width: 88px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 567px) {
+    .login_mobile_wepper {
+        position: absolute;
+        right: 21%;
+    }
+}
+
+@media (min-width: 768px) {
+    .login_mobile_wepper {
+        position: absolute;
+        right: 19%;
+    }
+
+    .air_conditioner_content h2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .air_conditioners_box img {
+        width: 120px;
+        height: 130px;
+    }
+
+    .air_conditioners_bg img {
+        height: 210px;
+    }
+
+    .air_conditioner_content a {
+        width: 80%;
+        font-size: 11px;
+        line-height: 24px;
+        height: unset;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 11px;
+    }
+
+    .air_conditioner_content {
+        top: 60px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content span a {
+        margin-bottom: 8px;
+    }
+}
+
+@media (min-width: 991px) {
+    .login_mobile_wepper {
+        position: absolute;
+        right: 19%;
+    }
+}
+
+
+
+@media (max-width: 991px) {
+
+    /* Only Disply None */
+    .logo_currnt img {
+        display: none;
+    }
+
+    /* Only Disply None End */
+
+    .club_member_ship_image_uplode .uplod_data {
+        width: 100%;
+    }
+
+    .example_wepper span {
+        width: 100%;
+    }
+
+    .email_wepper {
+        width: 100%;
+    }
+
+    .add_quotation_btn a {
+        width: 100%;
+    }
+
+    .previous_wepper {
+        display: block;
+        margin: 0;
+    }
+
+    .previous_wepper span {
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar-brand {
+        margin: 0;
+    }
+
+    .navbar-toggler {
+        padding: 0;
+    }
+
+    .header .navbar-expand-lg .navbar-nav .nav-link {
+        color: #000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.548);
+        padding: 15px;
+    }
+
+    .header .dropdown,
+    .dropend,
+    .dropstart,
+    .dropup {
+        width: 100%;
+    }
+
+    .header .nav-item {
+        width: 100%;
+    }
+
+    .destop_show {
+        display: none;
+    }
+
+    .mobile_show {
+        display: block;
+        padding: 5px;
+    }
+
+    .club_member_ship {
+        display: none;
+    }
+
+    .btn-close:focus {
+        box-shadow: unset;
+    }
+
+    .offcanvas-body {
+        padding: 0 !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: unset;
+    }
+
+
+    .offcanvas-body .align-items-center {
+        align-items: start !important;
+    }
+
+    .navbar-light .navbar-toggler {
+        background-color: unset;
+        border: unset;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: unset !important;
+    }
+
+    .top_book_appointment_wepper {
+        justify-content: space-around;
+    }
+
+    .top_logo {
+        text-align: center !important;
+        margin-bottom: 20px;
+    }
+
+    .our_product_tab_wepper {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .our_product_tab_wepper_main {
+        display: block !important;
+    }
+
+    .air_conditioners_box {
+        padding: 20px;
+    }
+
+    .air_conditioners_bg {
+        margin-top: -14px;
+    }
+
+    .air_conditioner_content a {
+        width: 100%;
+    }
+
+    .our_product_inner {
+        margin-bottom: 75px;
+    }
+
+    .air_conditioners_bg img {
+        height: unset;
+    }
+
+    .air_conditioner_content {
+        top: 23px;
+    }
+
+    .air_conditioner_content span {
+        margin-bottom: 46px;
+    }
+
+    .about_img_book img {
+        width: 100%;
+    }
+
+    .export_help {
+        padding: 0;
+    }
+
+    #msform {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #msform input {
+        width: 100% !important;
+    }
+
+    .send_quote_wepper .form-control,
+    .send_quote_wepper select {
+        width: 100% !important;
+    }
+
+    .what_going {
+        width: 100%;
+        padding: 10px 8px 10px;
+    }
+
+    #msform .action-button {
+        width: 100px !important;
+    }
+
+    .login_text_wepper {
+        width: 90%;
+    }
+
+    .login_hedding {
+        padding: 18px;
+    }
+
+    .login_hedding h2 {
+        font-size: 25px;
+    }
+
+    .fieldlabels {
+        width: 36%;
+    }
+
+    .login_mobile_wepper {
+        display: flex;
+        align-items: center;
+    }
+
+    .login_wepper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .forgot_wepper p {
+        margin-top: 26px;
+    }
+
+    .financing_services_page .about_hedding h2 {
+        width: 100%;
+        font-size: 33px;
+    }
+}
+
+@media (max-width: 767px) {
+    .book_appointment_sidebar_wepper .book_appointment_inner {
+        width: 100%;
+    }
+
+    .form_data .form-group label {
+        font-size: 11px;
+    }
+
+    .banner_weppper img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .banner_content a img {
+        height: unset;
+    }
+
+    .banner_content {
+        left: 30px;
+    }
+
+    .banner_content h1 {
+        width: 100%;
+        line-height: 69.213px;
+        font-size: 35.216px;
+    }
+
+    .banner_content p {
+        width: 90%;
+        margin-top: 0px;
+    }
+
+    .about_hedding p {
+        width: 100%;
+    }
+
+    .same_btn {
+        margin: 20px 0;
+    }
+
+    .with_us_wepper h2 {
+        width: 100%;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .with_us_wepper a {
+        margin: 0 auto 44px;
+    }
+
+
+    .with_service_right_side_wepper {
+        position: relative;
+        top: 0;
+    }
+
+    .with_service_right_side_wepper img {
+        width: 80%;
+        margin: 0 auto 40px;
+        height: unset;
+    }
+
+    .withus_bg {
+        margin: 0 auto 20px;
+    }
+
+    .hedding_why_choose span {
+        text-align: center;
+        display: block;
+    }
+
+    .hedding_why_choose h2 {
+        width: 100%;
+        font-size: 27px;
+        line-height: 42px;
+        padding-top: 0px;
+        text-align: start;
+    }
+
+    .hedding_why_choose p {
+        text-align: start;
+        margin-bottom: 20px;
+    }
+
+    .hedding_why_choose p:first-of-type {
+        margin: 0;
+    }
+
+    .our_process_hedding h2 {
+        width: 100%;
+        font-size: 27px;
+        line-height: 42px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .our_process_hedding span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .customer_box {
+        margin-bottom: 20px;
+    }
+
+    .quality_logo_wepper img {
+        width: 80px;
+    }
+
+    .quick_link_inner {
+        display: block;
+    }
+
+    .company_bg {
+        height: auto;
+    }
+
+    .company_box {
+        margin-bottom: 20px;
+    }
+
+    .breath_content h2 {
+        font-size: 20px;
+    }
+
+    .breath_btn_wepper a,
+    .breath_btn_wepper p {
+        width: 100%;
+        font-size: 14.152px;
+    }
+
+    .forgot_password_wepper {
+        margin-top: 50px;
+    }
+
+    .book_appointment_btn p,
+    .book_appointment_btn a {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .breath_content {
+        padding: 0 20px;
+    }
+
+    .breath_btn_wepper {
+        gap: 20px;
+
+    }
+
+    .breath_content p {
+        width: 100%;
+    }
+
+    .our_ac_service_wepper .container {
+        max-width: 700px;
+    }
+
+    .why_choose_imgdata img {
+        width: 100%;
+    }
+
+    .quality_logo_wepper {
+        display: unset;
+    }
+
+    .quality_brand .quality_logo_wepper {
+        display: flex;
+    }
+
+    /* .book_appointment_btn p {
+        display: none;
+    } */
+
+    .book_appointment_btn {
+        width: 100%;
+    }
+
+
+
+    .why_choose_about_page .row {
+        flex-direction: column-reverse;
+    }
+
+    .sparks_heating_box {
+        margin-bottom: 20px;
+    }
+
+    .book_content {
+        left: 0;
+        height: 90%;
+        padding: 0 20px;
+    }
+
+    .book_services_bg::before {
+        background-color: #0000009e;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .our_product_inner_wepper {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .air_conditioner_content span {
+        margin-bottom: 14px;
+    }
+
+    .air_conditioners_box img {
+        width: 203px;
+    }
+
+    .air_conditioner_content h2 {
+        line-height: 21px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content a {
+        width: 74%;
+        height: 30px;
+        line-height: 28px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 11PX;
+    }
+
+    .our_product_inner {
+        margin-bottom: 60px;
+    }
+
+    /* .product_details_img_inner {
+        display: block;
+    } */
+
+    .product_details_img_right_side {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .product_details_img_right_side img {
+        margin-left: 15px;
+    }
+
+    .add_quotation_btn img {
+        display: none;
+    }
+
+    .product_detalis_content {
+        margin-left: 0;
+    }
+
+    .add_quotation_btn a {
+        width: 100%;
+    }
+
+    .financing_services_page .about_hedding h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .Add_quotation_content {
+        display: block;
+    }
+
+    .select_wepper {
+        text-align: center;
+    }
+
+    .Add_quotation_img_data img {
+        margin-top: 20px;
+    }
+
+
+
+    .Add_quotation_left_imgdata_Weeper img {
+        width: 100%;
+    }
+
+    .book_content a img {
+        width: unset;
+    }
+
+    .get_quote_wepper .card p {
+        font-size: 15px;
+        margin-bottom: 0;
+        width: 84% !important;
+        margin-top: 20px !important;
+    }
+
+    .file_uplode_quote {
+        margin-bottom: 20px;
+        height: unset;
+    }
+
+    .fieldlabels span {
+        display: none;
+    }
+
+    .file_uplode_quote .filelabel img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .what_going_content .filelabel {
+        padding: 14px;
+    }
+
+    #msform input {
+        width: 65% !important;
+    }
+
+    .or_line {
+        display: none;
+    }
+
+    .steps a {
+        margin-left: 0;
+    }
+
+    .what_going_content p {
+        backdrop-filter: unset !important;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .login_text_wepper {
+        padding: 22px 10px;
+    }
+
+    .fieldlabels {
+        width: 36%;
+    }
+
+    .email_wepper {
+        margin: 20px auto 10px;
+    }
+
+    .example_wepper span {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+    .sure_whate h6 {
+        width: 100%;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .wepper_serive_select {
+        width: 100%;
+    }
+
+    .fs-title {
+        display: none;
+    }
+
+    .same_space {
+        padding: 60px 0;
+    }
+
+    .sparks_heating_hedding h2 {
+        font-size: 30px;
+    }
+
+    .air_conditioner_content h2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .air_conditioners_box img {
+        width: 90px;
+        height: 98px;
+    }
+
+    .air_conditioners_bg img {
+        height: 100px;
+    }
+
+    .air_conditioner_content a {
+        width: 80%;
+        font-size: 11px;
+        line-height: 24px;
+        height: unset;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 11px;
+    }
+
+    .air_conditioner_content {
+        top: 14px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .air_conditioner_content span a {
+        margin-bottom: 24px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+
+
+    /* Only BookAppoment */
+    .book_appointment_sidebar_wepper .book_appointment_inner {
+        width: 100%;
+        display: block !important;
+        padding: 80px 0
+    }
+
+    .Reach_hedding {
+        display: none;
+    }
+
+    .left_side_wepper .one_line {
+        width: 100%;
+    }
+
+    /* Only BookAppoment End */
+
+    .progress {
+        width: 90%;
+    }
+
+    .book_services_bg {
+        background-image: url(../images/mobile-bg.png);
+        background-position: center;
+    }
+
+    .book_services_bg::before {
+        content: unset;
+    }
+
+    .book_content {
+        height: 60% !important;
+    }
+
+    .book_content p {
+        width: 100%;
+    }
+
+    .book_content h6 {
+        width: 100%;
+        margin-top: 8px !important;
+    }
+
+    .Add_quotation_content select {
+        width: 100%;
+    }
+
+    .book_content h2 {
+        font-size: 20px;
+    }
+
+    .financing_services_page .about_content h2 {
+        text-align: center;
+    }
+
+    .Add_quotation_content {
+        padding: 10px;
+    }
+
+    .product_model {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .product_detalis_content h2 {
+        font-size: 18px;
+    }
+
+    .product_model p {
+        margin-bottom: 0;
+    }
+
+    .product_detalis_content span {
+        margin-bottom: 0;
+    }
+
+    .add_quotation_color_sec {
+        padding: 15px;
+        margin-top: 50px;
+    }
+
+    .what_going_content .filelabel {
+        padding: 20px;
+    }
+
+    .file_uplode_quote .title {
+        font-size: 13px;
+    }
+
+    #heading {
+        line-height: 40px;
+        font-size: 14px;
+    }
+
+    .steps {
+        text-align: start;
+        margin-top: 17px;
+    }
+
+    .thank_you_logo img {
+        width: 60%;
+    }
+
+    .financing_services_page .about_hedding h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .with_service_right_side_wepper img {
+        width: 77%;
+    }
+
+    .quick_link_email {
+        float: left;
+    }
+
+
+    .financing_services_page .about_hedding ul {
+        margin-left: 20px;
+    }
+
+    .financing_services_page .about_hedding li {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .login_text_wepper {
+        margin-bottom: 30px;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .book_appointment_btn {
+        gap: 10px;
+        display: inline-grid;
+    }
+
+    #msform input {
+        width: 90% !important;
+    }
+
+    .about_content h2 {
+        font-size: 30px;
+    }
+
+    .about_banner_wepper img {
+        height: 170px;
+    }
+
+    .financing_services_page .about_hedding ul li {
+        text-align: start;
+    }
+
+    .customer_hedding h2 {
+        font-size: 30px;
+    }
+
+    .air_conditioners_bg img {
+        height: unset;
+    }
+
+    .air_conditioners_box img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .air_conditioners_box {
+        padding: 50px;
+    }
+
+    .air_conditioners_bg {
+        margin-top: -34px;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 20px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .air_conditioner_content span a {
+        font-size: 16px;
+    }
+
+    .air_conditioner_content a {
+        font-size: 15px;
+        line-height: 44px;
+    }
+
+    .air_conditioner_content {
+        top: 105px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+
+    .company_heddingh h2 {
+        font-size: 20px;
+    }
+
+    .company_box {
+        padding: 12px;
+    }
+
+    .company_box h3 {
+        font-size: 20px;
+    }
+
+    .breath_btn_wepper {
+        display: block;
+        margin: 0;
+    }
+
+    .breath_btn_wepper a,
+    .breath_btn_wepper p {
+        margin-bottom: 20px;
+    }
+
+    .with_service_right_side_wepper img {
+        width: 85%;
+    }
+
+    .ac_services_box {
+        margin: auto;
+    }
+
+    .banner_content {
+        left: 20px;
+    }
+
+    .banner_content h1 {
+        line-height: 44px;
+        font-size: 20.216px;
+    }
+
+    .withus_bg {
+        width: 85%;
+    }
+
+    .same_space {
+        padding: 65px 0;
+    }
+
+    .about_hedding p {
+        text-align: start;
+    }
+
+    .same_btn {
+        margin: 20px auto;
+    }
+
+    .about_hedding h2 {
+        text-align: center;
+    }
+
+    .company_box p {
+        width: 70%;
+        margin: auto;
+    }
+
+    .breath_content h2 {
+        line-height: 30px;
+        padding: 10px 0 10px;
+    }
+
+    .with_service2 {
+        margin-top: 26px;
+        width: 187px !important;
+    }
+
+    .product_details_img_right_side img {
+        width: 80px;
+    }
+
+    .air_conditioner_content {
+        top: 76px;
+    }
+}
+
+@media (min-width: 319px) and (max-width:354px) {
+    .with_service2 {
+        margin-top: 33px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .withus_bg {
+        width: 100%;
+    }
+
+    .with_service_right_side_wepper img {
+        width: 100%;
+    }
+
+    .faq_wepper {
+        padding: 10px;
+    }
+
+    .customer_hedding h2 {
+        font-size: 25px;
+    }
+
+    .our_service_hedding h2 {
+        font-size: 25px;
+    }
+
+    .our_process_hedding h2 {
+        font-size: 25px;
+        line-height: 34px;
+    }
+
+    .quality_brands_wepper h2 {
+        font-size: 25px;
+    }
+
+    .our_process_content h3 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .our_process_content p {
+        text-align: center;
+    }
+
+    .our_process_content {
+        padding: 30px 10px;
+    }
+
+    .our_process_hedding {
+        margin-left: 0;
+    }
+
+    .customer_box img {
+        width: 30px;
+    }
+
+    .customer_box {
+        padding: 15px;
+    }
+
+    .customer_box p,
+    .customer_box h3,
+    .customer_box span {
+        text-align: start;
+        display: block;
+    }
+
+    .quality_logo_wepper {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .quality_logo_wepper img {
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        padding: 40px 10px 0;
+    }
+
+    .withus_bg p {
+
+        font-size: 14px;
+    }
+
+    .sparks_heating_hedding h2 {
+        line-height: 30px;
+        font-size: 25px;
+    }
+
+    .dimensions_wepper {
+        display: block;
+    }
+
+
+    .user_profile_icon {
+        width: 30px;
+    }
+
+    .cart_icon {
+        width: 36px;
+    }
+
+    .time_logo i {
+        font-size: 15px;
+    }
+
+    .time_logo p {
+        font-size: 12px;
+    }
+
+    .navbar-toggler-icon img {
+        width: 22px;
+    }
+
+    .air_conditioner_content {
+        top: 56px;
+    }
+}
+
+@media (max-width: 414px) {}
+
+@media (min-width: 320px) {
+    .with_service2 {
+        margin-top: 58px;
+    }
+
+    .Add_quotation_section .accordion-button span {
+        margin-left: 8%;
+    }
+}
+
+@media (min-width: 430px) {
+    .with_service2 {
+        margin-top: 81px;
+    }
+}
+
+@media (min-width: 375px) {
+    .with_service2 {
+        margin-top: 58px;
+    }
+}
+
+@media (max-width: 397px) {
+    .withus_img_book img {
+        width: 227px;
+    }
+
+    .with_service2 {
+        width: 186px !important;
+    }
+
+    .air_conditioner_content h2 {
+        font-size: 16px;
+    }
+
+    .air_conditioner_content p {
+        margin-bottom: 11px;
+    }
+
+    .air_conditioner_content span a {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 363px) {
+    .withus_img_book img {
+        width: 193px;
+    }
+
+    .air_conditioner_content {
+        top: 29px;
+    }
+}
+
+@media (max-width: 351px) {
+    .withus_img_book img {
+        width: 158px;
+    }
+}
+
+@media (max-width: 375px) {
+    /* .withus_img_book img {
+        width: 193px;
+    } */
+
+    .with_service2 {
+        /* margin-top: -16px; */
+        width: 187px !important;
+    }
+
+
+}
+
+@media (max-width: 342px) {
+    .banner_content h1 {
+        line-height: 32px;
+    }
+}
