@@ -8,17 +8,17 @@ import { get_cart_Data, incrQuantity, decrQuantity, addToCart, buyNow } from '..
 import { toast } from "react-toastify";
 
 const ProductCategories = () => {
-    const loginId= localStorage.getItem('loginId');
+    const loginId = localStorage.getItem('loginId');
     const [openCategory, setOpenCategory] = useState(null);
     const [activeProduct, setActiveProduct] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(null);
     const dispatch = useDispatch();
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
 
-   /// const cartData = useSelector((state) => state.cartReducer.cart) || [];
+    /// const cartData = useSelector((state) => state.cartReducer.cart) || [];
 
-   // const cartQuantity = cartData.find(cartItem => Number(cartItem.productId) === Number(lpId));
+    // const cartQuantity = cartData.find(cartItem => Number(cartItem.productId) === Number(lpId));
 
     const initialQuantity = 1;
 
@@ -86,7 +86,7 @@ const ProductCategories = () => {
         unitPrice: 0,
         totalAmount: 0
     });
-    
+
     useEffect(() => {
         getProductCategorywithsubcategory();
         getProductDetailBycategorysubcategory(0, 0);
@@ -94,7 +94,7 @@ const ProductCategories = () => {
         if (formData.productId) { // Ensure formData has been set properly
             try {
                 dispatch(addToCart(formData));
-                console.log(formData, 'formdata12');
+               
             } catch (error) {
                 toast.error("Error occurred while adding to cart.");
             }
@@ -102,33 +102,33 @@ const ProductCategories = () => {
 
     }, [formData]);
 
-const onProductDetail=(productId)=>{
-    navigate(`/product-detail/${productId}`)
-}
+    const onProductDetail = (productId) => {
+        navigate(`/product-detail/${productId}`)
+    }
 
 
 
 
-const onAddCart = async (item) => {
+    const onAddCart = async (item) => {
 
-    setProductDetailById(item);
-    console.log('item', item);
-    setFormData({
-        cartItemId: 0,
-        productId: item.productId,
-        loginId: loginId ? Number(loginId) : 0,
-        buyStatus: 1,
-        quantity: initialQuantity,
-        isActive: true,
-        createdBy: 0,
-        unitPrice: item.unitPrice || 0,
-        totalAmount: item.unitPrice || 0
-    })
+        setProductDetailById(item);
+
+        setFormData({
+            cartItemId: 0,
+            productId: item.productId,
+            loginId: loginId ? Number(loginId) : 0,
+            buyStatus: 1,
+            quantity: initialQuantity,
+            isActive: true,
+            createdBy: 0,
+            unitPrice: item.unitPrice || 0,
+            totalAmount: item.unitPrice || 0
+        })
 
 
-   
-   // navigate('/add-quotation');
-};
+
+        // navigate('/add-quotation');
+    };
 
 
 
@@ -183,9 +183,9 @@ const onAddCart = async (item) => {
                                         <>
 
                                             <div className="our_product_inner col-lg-4 col-md-4 col-sm-4">
-                                                <div className="air_conditioners_box"><span onClick={()=>onProductDetail(item.productId)}
-                                                
-                                                data-discover="true">
+                                                <div className="air_conditioners_box"><span onClick={() => onProductDetail(item.productId)}
+
+                                                    data-discover="true">
 
                                                     {item.productImageDtos?.map((imageitem, j) => (
                                                         imageitem.isHeader ?
