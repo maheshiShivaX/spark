@@ -29,7 +29,7 @@ const DashboardHeader = () => {
     };
 
     return (
-        <div className="container dashboard_container">
+        <div className="container-fluid dashboard_container">
             <div className="dashboard_hedaer">
                 <div className="dashboard_inner">
                     <h2>{getPageTitle()}</h2>
