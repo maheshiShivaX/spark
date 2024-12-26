@@ -23,7 +23,7 @@ const AdminLayout = ({ children }) => {
       <div style={{ display: isSidebarOpen ? 'block' : 'none' }}>
         <DashboardHeader />
 
-        <div className='container'>
+        <div className='container-fluid'>
           <div className='dashboard_tab_wepper'>
 
             <SideBar toggleNav={toggleNav} />

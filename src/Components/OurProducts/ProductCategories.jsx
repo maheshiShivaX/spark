@@ -200,7 +200,7 @@ const ProductCategories = () => {
                                                         <p>Categories : {item.categoryName}, {item.productSubCategoryName}</p>
                                                         <span><Link to={`/product-detail/${item.productId}`}>More Details &gt;</Link> </span>
                                                         {/* <Link to="/add-quotation" data-discover="true">Add To Quotation</Link> */}
-                                                        <button onClick={() => onAddCart(item)}>Add To Quotation </button>
+                                                        <button onClick={() => onAddCart(item)} className="add_to_Quotation_btn">Add To Quotation </button>
                                                     </div>
                                                 </div>
                                             </div>

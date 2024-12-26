@@ -114,9 +114,11 @@
 }
 
 .dashboard_tab_wepper {
-
+    width: 80.9%;
+    margin-left: auto;
     background: #E7E7E7;
     DISPLAY: FLEX;
+    padding: 0 50px 0 0;
 }
 
 .dashboard_tab_wepper .nav-link.active {
@@ -165,7 +167,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /* max-width: 85%; */
+    max-width: 90%;
     margin-left: auto;
     background: #fff;
     height: 90px;
