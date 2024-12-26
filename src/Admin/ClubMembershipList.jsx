@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdminLayout from "./AdminLayout";
 import "../Admin/admin.css";
-import { endpoints } from "../_config";
+import { endpoints, Image_BASE_URL } from "../_config";
 import { get } from "../_services/apiService";
 
 const ClubMembershipList = () => {
@@ -17,7 +17,7 @@ const ClubMembershipList = () => {
     const GetClubMembership = async () => {
         try {
             const response = await get(endpoints.GetClubMembership)
-            console.log('datar',response);
+            console.log('datar', response);
             if (response.isSuccess === 200) {
                 setClubMembership(response.data);
             } else {
@@ -134,18 +134,19 @@ const ClubMembershipList = () => {
                                         <th>Contact No</th>
                                         <th>Address</th>
                                         <th>Referral Source</th>
+                                        <th>Sign</th>
                                         <th>Entry Date</th>
-                                        <th>View</th>
-                                        <th>Action</th>
+                                        {/* <th>View</th> */}
+                                        {/* <th>Action</th> */}
                                     </tr>
                                 </thead>
 
-                            
-                                      <tbody>
+
+                                <tbody>
                                     {clubMembership?.length > 0 ? (
                                         clubMembership?.map((item, index) => (
                                             <tr key={index}>
-                                                <td>{index +1}</td>
+                                                <td>{index + 1}</td>
                                                 {/* <td>
                                                     <img
                                                         src={item.image}
@@ -157,15 +158,22 @@ const ClubMembershipList = () => {
                                                 <td>{item.emailId}</td>
                                                 <td>{item.contactNo}</td>
                                                 <td>{item.address} </td>
-                                               
                                                 <td>{item.referralSource}</td>
-                                               <td>{item.createdDate}</td>
                                                 <td>
-                                                    <div className={`active_btn ${item.isActive ? "active" : ""}`}>
-                                                        <span>{item.isActive ? "Active" : "Inactive"}</span>
-                                                    </div>
+                                                    <img
+                                                        src={`${Image_BASE_URL}${item.signPath}`}    style={{ width: "100px", height: "80px" }} />
+
                                                 </td>
-                                                <td>
+                                                <td>{item.createdDate}</td>
+                                                {/* <td>
+                                                    <span className="edit_icon_wepper" >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 32 32" fill="none">
+                                                            <path d="M16 9.75C12.5537 9.75 9.75 12.5538 9.75 16C9.75 19.4462 12.5537 22.25 16 22.25C19.4463 22.25 22.25 19.4462 22.25 16C22.25 12.5538 19.4463 9.75 16 9.75ZM16 19.75C13.9323 19.75 12.25 18.0677 12.25 16C12.25 13.9323 13.9323 12.25 16 12.25C18.0677 12.25 19.75 13.9323 19.75 16C19.75 18.0677 18.0677 19.75 16 19.75Z" fill="black" />
+                                                            <path d="M31.5881 15.3389C30.3622 13.3717 24.1243 4.75 16 4.75C7.8775 4.75 1.63787 13.3716 0.411938 15.3389L0 16L0.411938 16.6611C1.63775 18.6283 7.87569 27.25 16 27.25C24.1225 27.25 30.3621 18.6284 31.5881 16.6611L32 16L31.5881 15.3389ZM16 24.75C9.69775 24.75 4.50862 18.1404 2.99325 15.999C4.50581 13.8559 9.68162 7.25 16 7.25C22.3018 7.25 27.4907 13.8587 29.0068 16.001C27.4942 18.1442 22.3184 24.75 16 24.75Z" fill="black" />
+                                                        </svg>
+                                                    </span>
+                                                </td> */}
+                                                {/* <td>
                                                     <div className="action_btn_weepr">
                                                         <span className="edit_icon_wepper">
                                                             <svg id="Layer_1" viewBox="0 0 512 512" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -196,7 +204,7 @@ const ClubMembershipList = () => {
                                                             </svg>
                                                         </span>
                                                     </div>
-                                                </td>
+                                                </td> */}
                                             </tr>
                                         ))
                                     ) : (

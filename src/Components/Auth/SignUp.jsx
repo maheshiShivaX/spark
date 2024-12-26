@@ -6,6 +6,7 @@ import Footer from "../Shared/Footer";
 import Header from "../Shared/Header";
 import { API_BASE_URL, endpoints } from "../../_config";
 import { post } from "../../_services/apiService";
+import { useDispatch, useSelector } from "react-redux";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -20,6 +21,9 @@ const SignUp = () => {
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const dispatch = useDispatch();
+    const reduxCartData = useSelector((state) => state.cartReducer.cart);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -62,6 +66,9 @@ const SignUp = () => {
             const response = await post(endpoints.SaveLoginDetail, payload)
 
             if (response.isSuccess == 200) {
+
+
+                console.log('res', response.data.loginId)
                 toast.success("User created successfully!", {
                     position: "top-right",
                     autoClose: 3000,
@@ -75,7 +82,49 @@ const SignUp = () => {
                     password: "",
                     confirmPassword: "",
                 });
-                navigate("/login");
+
+                localStorage.setItem("loginId", response.data.loginId);
+
+
+
+                localStorage.setItem("authToken", response.token);
+
+                const cartstatus = localStorage.getItem('CartData');
+                // dispatch(saveorder(formData));
+
+                if (cartstatus == 'Y') {
+
+                    const cartItems = reduxCartData.map(item => ({
+                        productId: item.productId || 0,
+                        quantity: item.quantity || 1,
+                        unitPrice: item.unitPrice || 0,
+                        totalAmount: item.unitPrice ? item.unitPrice * item.quantity : 0,
+                        loginid: response.data.loginId
+                    }));
+
+
+                    console.log('cartitems', cartItems);
+                    if (cartItems.length > 0) {
+                        const responsecart = await post(endpoints.SaveProductOrder, cartItems)
+                        if (responsecart.isSuccess === 200) {
+                            localStorage.setItem("CartData", '');
+                            localStorage.setItem("cartstatus", '');
+                        }
+                        localStorage.setItem("CartData", '');
+                        localStorage.setItem("cartstatus", '');
+                    }
+                    localStorage.setItem("cartstatus", '');
+                }
+
+                localStorage.setItem("roleId", response.data.roleId);
+                if (response.data.roleId == 1) {
+                    navigate("/admin/dashboard");
+                } else {
+                    navigate("/admin/userdashboard");
+                }
+
+
+                // navigate("/login");
             } else {
                 toast.error(response.message || "Failed to create user.");
             }

@@ -4,22 +4,22 @@ import "../Admin/admin.css";
 import { endpoints, Image_BASE_URL } from "../_config";
 import { get } from "../_services/apiService";
 
-const QuotationList = () => {
+const UserClubMembership = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(5);
     const [searchTerm, setSearchTerm] = useState(""); // Add state for search term
 
-    const [quatationData, setQuatationData] = useState();
+    const [clubMembership, setClubMembership] = useState();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [quatationItemData, setQuatationItemData] = useState();
+    const loginId = localStorage.getItem("loginId");
 
-    const GetQuatation = async () => {
+    const GetClubMembership = async (loginid) => {
         try {
-            const response = await get(endpoints.GetQuatation)
+            const response = await get(endpoints.GetClubMembershipByLoginId + "?pLoginId=" + loginid)
             console.log('datar', response);
             if (response.isSuccess === 200) {
-                setQuatationData(response.data);
+                setClubMembership(response.data);
             } else {
                 setError("Failed to fetch Service Type");
             }
@@ -32,9 +32,8 @@ const QuotationList = () => {
 
 
     useEffect(() => {
-        GetQuatation();
+        GetClubMembership(loginId);
     }, []);
-
 
     const data = [
         {
@@ -59,6 +58,7 @@ const QuotationList = () => {
         },
         // Add more mock data
     ];
+
 
     // Filter data based on search term
     const filteredData = data.filter((item) =>
@@ -88,27 +88,6 @@ const QuotationList = () => {
         setCurrentPage(1); // Reset to first page on new search
     };
 
-
-    const modelToggle = (modelname, status, item) => {
-        // Get the modal element by ID
-
-        setQuatationItemData(item);
-        // console.log('item', item);
-        // console.log('item1', productOrderItemData);
-        const modalElement = document.getElementById(modelname);
-        let modal = window.bootstrap.Modal.getInstance(modalElement);
-        if (!modal) {
-            modal = new window.bootstrap.Modal(modalElement);
-        }
-        // Show or hide the modal based on the status value
-        if (status) {
-            modal.show(); // Show the modal if status is true
-        } else {
-            modal.hide(); // Hide the modal if status is false
-        }
-    };
-
-
     return (
         <div>
             <AdminLayout>
@@ -117,7 +96,7 @@ const QuotationList = () => {
                         <div className="row">
                             <div className="col-lg-5">
                                 <div className="product_hedding">
-                                    <h2>Quotation</h2>
+                                    <h2>Club Membership</h2>
                                 </div>
                             </div>
                             {/* <div className="col-lg-7">
@@ -154,21 +133,18 @@ const QuotationList = () => {
                                         <th>Email Id</th>
                                         <th>Contact No</th>
                                         <th>Address</th>
-                                        <th>Service Type</th>
-                                        <th>Size</th>
-                                        {/* <th>Product Detail</th>
                                         <th>Referral Source</th>
-                                        <th>Additional Msg</th> */}
+                                        <th>Sign</th>
                                         <th>Entry Date</th>
                                         <th>View</th>
-                                        {/* <th>Action</th> */}
+
                                     </tr>
-
-
                                 </thead>
+
+
                                 <tbody>
-                                    {quatationData?.length > 0 ? (
-                                        quatationData?.map((item, index) => (
+                                    {clubMembership?.length > 0 ? (
+                                        clubMembership?.map((item, index) => (
                                             <tr key={index}>
                                                 <td>{index + 1}</td>
                                                 {/* <td>
@@ -182,16 +158,16 @@ const QuotationList = () => {
                                                 <td>{item.emailId}</td>
                                                 <td>{item.contactNo}</td>
                                                 <td>{item.address} </td>
-                                                <td>{item.serviceName}</td>
-                                                <td>{item.sizeTypeName}</td> 
-                                                {/* <td>{item.productDetail}</td>
-                                                <td>{item.referralSource}</td>
-                                                <td>{item.additionalMsg}</td> */}
 
-                                                <td>{item.createdDate}</td>
-                                                {/* <td>{item.isDisplay ? "True" : "False"}</td> */}
+                                                <td>{item.referralSource}</td>
                                                 <td>
-                                                    <span className="edit_icon_wepper" onClick={() => modelToggle('modeldata', true, item)} >
+                                                    <img
+                                                        src={`${Image_BASE_URL}${item.signPath}`} style={{ width: "100px", height: "80px" }} />
+
+                                                </td>
+                                                <td>{item.createdDate}</td>
+                                                <td>
+                                                    <span className="edit_icon_wepper" >
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 32 32" fill="none">
                                                             <path d="M16 9.75C12.5537 9.75 9.75 12.5538 9.75 16C9.75 19.4462 12.5537 22.25 16 22.25C19.4463 22.25 22.25 19.4462 22.25 16C22.25 12.5538 19.4463 9.75 16 9.75ZM16 19.75C13.9323 19.75 12.25 18.0677 12.25 16C12.25 13.9323 13.9323 12.25 16 12.25C18.0677 12.25 19.75 13.9323 19.75 16C19.75 18.0677 18.0677 19.75 16 19.75Z" fill="black" />
                                                             <path d="M31.5881 15.3389C30.3622 13.3717 24.1243 4.75 16 4.75C7.8775 4.75 1.63787 13.3716 0.411938 15.3389L0 16L0.411938 16.6611C1.63775 18.6283 7.87569 27.25 16 27.25C24.1225 27.25 30.3621 18.6284 31.5881 16.6611L32 16L31.5881 15.3389ZM16 24.75C9.69775 24.75 4.50862 18.1404 2.99325 15.999C4.50581 13.8559 9.68162 7.25 16 7.25C22.3018 7.25 27.4907 13.8587 29.0068 16.001C27.4942 18.1442 22.3184 24.75 16 24.75Z" fill="black" />
@@ -275,116 +251,27 @@ const QuotationList = () => {
                 </div>
             </AdminLayout>
             {/* Modal */}
-            <div className="modal fade" id="modeldata" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-xl">
+            <div className="modal fade" id="Subcategory" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Quotation</h5>
+                            <h5 className="modal-title" id="exampleModalLabel">New message</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-
-                            {quatationItemData != null ?
-
-                                <div className="">
-
-                                    <div className="row user_deatlis">
-                                        <div className="col-lg-3">
-                                            <strong>Name: </strong>
-
-                                        </div>
-                                        <div className="col-lg-3">
-                                            {quatationItemData.firstName} {quatationItemData.lastName}
-                                        </div>
-
-                                        <div className="col-lg-3">
-                                            <strong>Email Id: </strong>
-
-                                        </div>
-                                        <div className="col-lg-3">
-                                            {quatationItemData?.emailId}
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <strong>Contact No: </strong>
-
-                                        </div>
-                                        <div className="col-lg-9">
-                                            {quatationItemData?.contactNo}
-                                        </div>
-
-
-
-                                        <div className="col-lg-3">
-                                            <strong>Address:</strong>
-                                        </div>
-                                        <div className="col-lg-9">
-                                            {quatationItemData?.address}
-                                        </div>
-                                        <div className="col-lg-3">
-                                            <strong>Service Type:</strong>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            {quatationItemData?.serviceName}
-                                        </div>
-
-                                        <div className="col-lg-3">
-                                            <strong>Size Type Name:</strong>
-                                        </div>
-                                        <div className="col-lg-3">
-                                            {quatationItemData?.sizeTypeName}
-                                        </div>
-
-                                        <div className="col-lg-3">
-                                            <strong>Product Detail:</strong>
-                                        </div>
-                                        <div className="col-lg-9">
-                                            {quatationItemData?.productDetail}
-                                        </div>
-
-                                        <div className="col-lg-3">
-                                            <strong>Referral Source:</strong>
-                                        </div>
-                                        <div className="col-lg-9">
-                                            {quatationItemData?.referralSource}
-                                        </div>
-
-
-                                        <div className="col-lg-3">
-                                            <strong>Additional Message:</strong>
-                                        </div>
-                                        <div className="col-lg-9">
-                                            {quatationItemData?.additionalMsg}
-                                        </div>
-                                        <div className="col-lg-6">
-                                            <strong>Product Path:</strong>
-                                        </div>
-                                        <div className="col-lg-6">
-                                            <strong>Serial Image Path:</strong>
-                                        </div>
-
-                                        <div className="col-lg-6"> <img
-                                            src={`${Image_BASE_URL}${quatationItemData.productPath}`}
-                                            alt="Product"
-                                            style={{ width: "150px", height: "150px" }} />
-                                        </div>
-
-
-
-                                        <div className="col-lg-6">
-
-
-                                            <img
-                                                src={`${Image_BASE_URL}${quatationItemData.serialImagePath}`}
-                                                alt="Product"
-                                                style={{ width: "150px", height: "150px" }} />
-                                        </div>
-
-                                    </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name" />
                                 </div>
-
-                                : null}
-
-
+                                <div class="mb-3 input_file">
+                                    <input type="file" id="myfile" name="myfile" />
+                                </div>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                            <button type="button" class="btn btn-primary">Summit</button>
                         </div>
                     </div>
                 </div>
@@ -393,4 +280,4 @@ const QuotationList = () => {
     );
 };
 
-export default QuotationList;
+export default UserClubMembership;

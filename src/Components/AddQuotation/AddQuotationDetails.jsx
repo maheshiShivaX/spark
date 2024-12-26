@@ -21,8 +21,7 @@ const AddQuotationDetails = () => {
 
     useEffect(() => {
 
-        console.log(loginId);
-        if (loginId) {
+     
             const cartItems = reduxCartData.map(item => ({
                 cartItemId: item.cartItemId || 0,
                 productId: item.productId || 0,
@@ -34,7 +33,7 @@ const AddQuotationDetails = () => {
             }));
             console.log(cartItems);
             setBuyFormData(cartItems);
-        }
+        
     }, [loginId, reduxCartData])
 
     const filteredData = reduxCartData.filter(row => row.quantity != null && row.quantity > 0);
@@ -166,13 +165,12 @@ const AddQuotationDetails = () => {
                                                         required.</li>
                                                 </ul>
                                             </div>
-
+                                            <div className="add_quotation_btn">
+                                                <a onClick={onSubmitQuotation} >Get Instant Quote Now </a>
+                                            </div>
                                         </div>
-                                       
                                     </div>
-                                    <div className="add_quotation_btn">
-                                            <a onClick={onSubmitQuotation} >Get Instant Quote Now </a>
-                                        </div>
+
 
                                 </div>
                             </div>

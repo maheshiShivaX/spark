@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { endpoints } from "../../_config";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { post } from '../../_services/apiService';
+import { useDispatch, useSelector } from "react-redux";
+import { get_cart_Data, saveorder } from "../../redux/action";
 
 const Login = () => {
     const [username, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loginDetailId, setLoginDetailId] = useState();
     const navigate = useNavigate();
 
+    const dispatch = useDispatch();
+    const reduxCartData = useSelector((state) => state.cartReducer.cart);
+    const loginId = localStorage.getItem("loginId");
+
+   
+
+
+    console.log('cartdata1', reduxCartData);
+
+
+    useEffect(() => {
+        dispatch(get_cart_Data());
+    }, [dispatch]);
 
 
     const handleLogin = async () => {
@@ -20,11 +36,33 @@ const Login = () => {
             const response = await post(endpoints.GetLoginDetails, payload)
             console.log("Response:", response); // Log response for debugging
             if (response.isSuccess === 200) {
+
+                localStorage.setItem("loginId", response.data[0].loginId);
+
+
+                
                 localStorage.setItem("authToken", response.token);
 
                 const cartstatus = localStorage.getItem('CartData');
-                if (cartstatus == 'Y') {
+               // dispatch(saveorder(formData));
+          
+                if (cartstatus == 'Y' ) {
 
+                    const cartItems = reduxCartData.map(item => ({
+                        productId: item.productId || 0,
+                        quantity: item.quantity || 1,
+                        unitPrice: item.unitPrice || 0,
+                        totalAmount: item.unitPrice ? item.unitPrice * item.quantity : 0,
+                        loginid:response.data[0].loginId
+                    }));
+    
+
+
+                    const responsecart = await post(endpoints.SaveProductOrder, cartItems)
+                    if (responsecart.isSuccess === 200) {
+                        localStorage.setItem("CartData", '');
+                    }
+                    localStorage.setItem("CartData", '');
                 }
 
 
@@ -33,7 +71,6 @@ const Login = () => {
                 //     autoClose: 3000,
                 // });
 
-                localStorage.setItem("loginId", response.data[0].loginId);
                 localStorage.setItem("roleId", response.data[0].roleId);
                 if (response.data[0].roleId == 1) {
                     navigate("/admin/dashboard");

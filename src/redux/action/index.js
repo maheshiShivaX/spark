@@ -5,26 +5,11 @@ import { get, post } from "../../_services/apiService";
 import { toast } from "react-toastify";
 
 export const get_cart_Data = () => async (dispatch) => {
-    const loginId = localStorage.getItem('loginId');
-
-    if (loginId) {
-        try {
-            const response = await post(endpoints.GetCartDetailByLoginId +'?pLoginId=' + loginId ) 
-            if (response.isSuccess==200) {
-                dispatch({ type: GET_ALL_CART_DATA, payload: response.data });
-            } else {
-                dispatch({ type: GET_ALL_CART_DATA, payload: [] });
-            }
-        } catch (error) {
-            // console.error('Error fetching cart data:', error);
-            dispatch({ type: GET_ALL_CART_DATA, payload: [] });
-        }
-    } else {
+   
 
         const localCartData = JSON.parse(localStorage.getItem('lcart')) || [];
         dispatch({ type: GET_ALL_CART_DATA, payload: localCartData });
     }
-};
 
 // const getProductDetailById = async (productId) => {
 //     const secretKey = CryptoJS.enc.Utf8.parse("uitsufdytuiysdifdsfdsfdhgtyuijkj");
@@ -89,34 +74,9 @@ export const get_cart_Data = () => async (dispatch) => {
 // };
 
 export const addToCart = (formData) => async (dispatch) => {
-    const loginId = localStorage.getItem('loginId');
+
 //alert('loginid' + loginId);
-    if (loginId) {
-        try {
-            const response = await post(endpoints.SaveCartDetail, formData);
-            console.log(response);
-            if (response.isSuccess === 200 && response.data.length > 0) {
-                dispatch({ type: ADD_TO_CART, payload: response.data });
-            } else {
-                toast.error(response.message);
-               
-            }
-            // const response = await axios.post(`${baseurl}${API_URL?.SaveCartDetail}`, formData, {
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //         'Authorization': `Bearer ${jwtToken}`
-            //     },
-            // });
-            // if (response.status === 200) {
-            //     dispatch({ type: ADD_TO_CART, payload: response.data.data });
-            // } else {
-            //     toast.error("Failed to add item to cart");
-            // }
-        } catch (error) {
-            // console.error('Error adding to cart:', error);
-            toast.error("An error occurred. Please try again.");
-        }
-    } else {
+    {
         try {
 
 
@@ -151,6 +111,31 @@ export const addToCart = (formData) => async (dispatch) => {
         }
     }
 };
+
+export const saveorder = (formData) => async (dispatch) => {
+    const loginId = localStorage.getItem('loginId');
+//alert('loginid' + loginId);
+    {
+        try {
+
+
+            if ( formData.loginId>0) {
+
+                const responsecart = await post(endpoints.SaveProductOrder, formData)
+                if (responsecart.isSuccess === 200) {
+                    localStorage.setItem("CartData", '');
+                }
+                localStorage.setItem("CartData", '');
+            }
+      
+       
+        } catch (error) {
+            toast.error("Error occurred while fetching product details.");
+        }
+    }
+};
+
+
 
 /*if save only cart data in localstorage */
 

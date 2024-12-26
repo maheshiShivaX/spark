@@ -1,0 +1,183 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header_weepr {
+    background: #204C6D;
+    padding: 25px;
+    position: relative;
+}
+
+.header_text {
+    background: #0d314b;
+    padding: 40px;
+    border-radius: 0px 0 0 157px;
+    width: 28%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: end;
+}
+
+.header_text h2 {
+    color: #ffff;
+    font-size: 38px;
+    margin: 0;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.header_text p strong {
+    margin: 0;
+    color: #ffff;
+
+}
+
+.header_text p {
+    margin: 0;
+    color: #d7d7d7c7;
+    font-size: 12px;
+}
+
+.all_main_wepper {
+    padding: 0 40px;
+}
+
+.client-details {
+    margin-top: 80px;
+}
+
+.client-details h3 {
+    color: #204d6e;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.client-details span {
+    color: #000;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.client-details p {
+    color: #000;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.quotation-details p{
+    color: #000;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+/* .container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+} */
+
+
+
+
+.product-header {
+    display: flex;
+    padding: 10px 0;
+    background-color: #204d6e;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+
+.product-row:last-child {
+    border-bottom: none;
+}
+
+.product-no,
+.product-description,
+.price,
+.quantity,
+.total {
+    width: 20%;
+    text-align: center;
+}
+
+.product-description {
+    width: 40%;
+}
+
+.footer1,
+.terms,
+.signature {
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: unset;
+    padding: 0px;
+}
+
+.footer1 p {
+    margin: 5px;
+}
+
+.terms-conditions-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.terms-conditions-row .left-col {
+    width: 65%;
+}
+
+.terms-conditions-row .right-col {
+    width: 35%;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+
+
+    .product-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-no,
+    .product-description,
+    .price,
+    .quantity,
+    .total {
+        width: 100%;
+        text-align: left;
+    }
+
+    .total-price {
+        text-align: left;
+    }
+
+    .terms-conditions-row {
+        flex-direction: column;
+    }
+
+    .terms-conditions-row .left-col,
+    .terms-conditions-row .right-col {
+        width: 100%;
+        text-align: left;
+    }
+}

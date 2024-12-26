@@ -35,6 +35,11 @@ import ProductSpecification from './Admin/ProductSpecification';
 
 import ProductImages from './Admin/ProductImages';
 import ProductDetail from './Admin/ProductDetail';
+import ProductQuotation from './Admin/ProductQuotation';
+import QuatationTemplate from './Admin/QuatationTemplate';
+import UserClubMembership from './Admin/UserClubMembership';
+import UserQuotation from './Admin/UserQuotation';
+import UserProductQuotation from './Admin/UserProductQuotation';
 
 
 
@@ -82,6 +87,14 @@ function App() {
             <Route path="productspecification" element={<ProductSpecification />} />
             <Route path="productimage" element={<ProductImages />} />
             <Route path="productdetail/:id" element={<ProductDetail />} />
+
+            <Route path="productquotation" element={<ProductQuotation />} />
+            
+            <Route path="quatationtemplate/:id" element={<QuatationTemplate />} />
+            <Route path="userclubmembership" element={<UserClubMembership />} />
+            <Route path="userquotation" element={<UserQuotation />} />
+            <Route path="userproductquotation" element={<UserProductQuotation />} />
+
             
             
           </Route>

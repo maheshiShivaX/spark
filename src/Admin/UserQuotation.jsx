@@ -4,7 +4,7 @@ import "../Admin/admin.css";
 import { endpoints, Image_BASE_URL } from "../_config";
 import { get } from "../_services/apiService";
 
-const QuotationList = () => {
+const UserQuotation  = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(5);
     const [searchTerm, setSearchTerm] = useState(""); // Add state for search term
@@ -12,12 +12,12 @@ const QuotationList = () => {
     const [quatationData, setQuatationData] = useState();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const loginId = localStorage.getItem("loginId");
     const [quatationItemData, setQuatationItemData] = useState();
-
-    const GetQuatation = async () => {
+    const GetQuatation = async (loginid) => {
         try {
-            const response = await get(endpoints.GetQuatation)
-            console.log('datar', response);
+            const response = await get(endpoints.GetQuatationByLoginId + "?pLoginId=" + loginid)
+            console.log('datar',response);
             if (response.isSuccess === 200) {
                 setQuatationData(response.data);
             } else {
@@ -32,7 +32,7 @@ const QuotationList = () => {
 
 
     useEffect(() => {
-        GetQuatation();
+        GetQuatation(loginId);
     }, []);
 
 
@@ -87,7 +87,6 @@ const QuotationList = () => {
         setSearchTerm(e.target.value);
         setCurrentPage(1); // Reset to first page on new search
     };
-
 
     const modelToggle = (modelname, status, item) => {
         // Get the modal element by ID
@@ -156,21 +155,22 @@ const QuotationList = () => {
                                         <th>Address</th>
                                         <th>Service Type</th>
                                         <th>Size</th>
-                                        {/* <th>Product Detail</th>
+                                        <th>Product Detail</th>
                                         <th>Referral Source</th>
-                                        <th>Additional Msg</th> */}
+                                        <th>Additional Msg</th>
+                                     
                                         <th>Entry Date</th>
                                         <th>View</th>
                                         {/* <th>Action</th> */}
                                     </tr>
 
-
+                       
                                 </thead>
                                 <tbody>
                                     {quatationData?.length > 0 ? (
                                         quatationData?.map((item, index) => (
                                             <tr key={index}>
-                                                <td>{index + 1}</td>
+                                                <td>{index +1}</td>
                                                 {/* <td>
                                                     <img
                                                         src={item.image}
@@ -183,11 +183,10 @@ const QuotationList = () => {
                                                 <td>{item.contactNo}</td>
                                                 <td>{item.address} </td>
                                                 <td>{item.serviceName}</td>
-                                                <td>{item.sizeTypeName}</td> 
-                                                {/* <td>{item.productDetail}</td>
+                                                <td>{item.sizeTypeName}</td> <td>{item.productDetail}</td>
                                                 <td>{item.referralSource}</td>
-                                                <td>{item.additionalMsg}</td> */}
-
+                                                <td>{item.additionalMsg}</td>
+                                              
                                                 <td>{item.createdDate}</td>
                                                 {/* <td>{item.isDisplay ? "True" : "False"}</td> */}
                                                 <td>
@@ -393,4 +392,4 @@ const QuotationList = () => {
     );
 };
 
-export default QuotationList;
+export default UserQuotation ;

@@ -8,17 +8,17 @@ import { get_cart_Data, incrQuantity, decrQuantity, addToCart, buyNow } from '..
 import { toast } from "react-toastify";
 
 const ProductCategories = () => {
-    const loginId = localStorage.getItem('loginId');
+    const loginId= localStorage.getItem('loginId');
     const [openCategory, setOpenCategory] = useState(null);
     const [activeProduct, setActiveProduct] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(null);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const navigate =useNavigate();
 
 
-    /// const cartData = useSelector((state) => state.cartReducer.cart) || [];
+   /// const cartData = useSelector((state) => state.cartReducer.cart) || [];
 
-    // const cartQuantity = cartData.find(cartItem => Number(cartItem.productId) === Number(lpId));
+   // const cartQuantity = cartData.find(cartItem => Number(cartItem.productId) === Number(lpId));
 
     const initialQuantity = 1;
 
@@ -86,7 +86,7 @@ const ProductCategories = () => {
         unitPrice: 0,
         totalAmount: 0
     });
-
+    
     useEffect(() => {
         getProductCategorywithsubcategory();
         getProductDetailBycategorysubcategory(0, 0);
@@ -102,105 +102,120 @@ const ProductCategories = () => {
 
     }, [formData]);
 
-    const onProductDetail = (productId) => {
-        navigate(`/product-detail/${productId}`)
-    }
+const onProductDetail=(productId)=>{
+    navigate(`/product-detail/${productId}`)
+}
 
 
 
 
-    const onAddCart = async (item) => {
+const onAddCart = async (item) => {
 
-        setProductDetailById(item);
-        console.log('item', item);
-        setFormData({
-            cartItemId: 0,
-            productId: item.productId,
-            loginId: loginId ? Number(loginId) : 0,
-            buyStatus: 1,
-            quantity: initialQuantity,
-            isActive: true,
-            createdBy: 0,
-            unitPrice: item.unitPrice || 0,
-            totalAmount: item.unitPrice || 0
-        })
+    setProductDetailById(item);
+    console.log('item', item);
+    setFormData({
+        cartItemId: 0,
+        productId: item.productId,
+        loginId: loginId ? Number(loginId) : 0,
+        buyStatus: 1,
+        quantity: initialQuantity,
+        isActive: true,
+        createdBy: 0,
+        unitPrice: item.unitPrice || 0,
+        totalAmount: item.unitPrice || 0
+    })
 
 
-
-        // navigate('/add-quotation');
-    };
+   
+   // navigate('/add-quotation');
+};
 
 
 
     return (
-        <section className="same_space" >
-            <div className="container our_product_tab_wepper_main">
-                <div className="row">
-                    <div className="col-lg-3">
-                        <div className="our_product_tab_wepper">
-                            <h2>Product categories</h2>
-                            {/* Air Conditioners */}
-                            {productCategoryData?.map((item, i) => {
-                                return (
-                                    <div key={i}>
-                                        {/* Toggle button for category */}
-                                        <button className="nav-link" onClick={() => toggleCategory(item.displayName)}>
-                                            {item.displayName}
-                                            <i
-                                                className={`fa-solid fa-chevron-right ${openCategory === item.displayName ? "rotate-icon" : ""}`}
-                                            ></i>
-                                        </button>
+        <section className="same_space">
+            <div className="container">
+                <div className="our_product_tab_wepper_main row">
+                    <div className="nav flex-column nav-pills our_product_tab_wepper col-lg-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <h2>Product categories</h2>
 
-                                        {/* Display subcategories if the category is open */}
-                                        {openCategory === item.displayName && (
-                                            <ul className="child-dropdown">
-                                                {item.subCategoryDtos?.map((element, j) => (
-                                                    <li key={j} onClick={() => getProductDetailBycategorysubcategory(element.productCategoryId, element.productSubCategoryId)}>
-                                                        {element.displayName}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        {/* Air Conditioners */}
+
+
+                        {productCategoryData?.map((item, i) => {
+                            return (
+                                <div key={i}>
+                                    {/* Toggle button for category */}
+                                    <button className="nav-link" onClick={() => toggleCategory(item.displayName)}>
+                                        {item.displayName}
+                                        <i
+                                            className={`fa-solid fa-chevron-right ${openCategory === item.displayName ? "rotate-icon" : ""}`}
+                                        ></i>
+                                    </button>
+
+                                    {/* Display subcategories if the category is open */}
+                                    {openCategory === item.displayName && (
+                                        <ul className="child-dropdown">
+                                            {item.subCategoryDtos?.map((element, j) => (
+                                                <li key={j} onClick={() => getProductDetailBycategorysubcategory(element.productCategoryId, element.productSubCategoryId)}>
+                                                    {element.displayName}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            );
+                        })}
+
                     </div>
+
                     {/* Product Display */}
-                    <div className="col-lg-9">
+                    <div className="tab-content col-lg-9" id="v-pills-tabContent">
+
+
                         <>
-                            <div className=" our_product_inner_wepper">
-                                <div className=" row">
+                            <div className="">
+                                <div className="our_product_inner_wepper row">
+
+
+
                                     {productData?.map((item, i) => (
                                         <>
-                                            <div className="col-lg-4 col-md-4 col-sm-4">
-                                                <div className="our_product_inner ">
-                                                    <div className="air_conditioners_box"><span onClick={() => onProductDetail(item.productId)}
-                                                        data-discover="true">
-                                                        {item.productImageDtos?.map((imageitem, j) => (
-                                                            imageitem.isHeader ?
-                                                                <img src={`${Image_BASE_URL}${imageitem?.imgPath}`} alt="" />
-                                                                : null
-                                                        ))}
-                                                    </span></div>
-                                                    <div className="air_conditioners_bg"><img src="images/air-conditioners.svg" alt="" className="w-100" />
-                                                        <div className="air_conditioner_content">
-                                                            <h2>{item.displayName}</h2>
-                                                            <p>Categories : {item.categoryName}, {item.productSubCategoryName}</p>
-                                                            <span><Link to={`/product-detail/${item.productId}`}>More Details &gt;</Link> </span>
-                                                            {/* <Link to="/add-quotation" data-discover="true">Add To Quotation</Link> */}
-                                                            <button onClick={() => onAddCart(item)} className="add_to_Quotation_btn">Add To Quotation </button>
-                                                        </div>
+
+                                            <div className="our_product_inner col-lg-4 col-md-4 col-sm-4">
+                                                <div className="air_conditioners_box"><span onClick={()=>onProductDetail(item.productId)}
+                                                
+                                                data-discover="true">
+
+                                                    {item.productImageDtos?.map((imageitem, j) => (
+                                                        imageitem.isHeader ?
+                                                            <img src={`${Image_BASE_URL}${imageitem?.imgPath}`} alt="" />
+                                                            : null
+                                                    ))}
+
+                                                </span></div>
+                                                <div className="air_conditioners_bg"><img src="images/air-conditioners.svg" alt="" className="w-100" />
+                                                    <div className="air_conditioner_content">
+                                                        <h2>{item.displayName}</h2>
+                                                        <p>Categories : {item.categoryName}, {item.productSubCategoryName}</p>
+                                                        <span><Link to={`/product-detail/${item.productId}`}>More Details &gt;</Link> </span>
+                                                        {/* <Link to="/add-quotation" data-discover="true">Add To Quotation</Link> */}
+                                                        <button onClick={() => onAddCart(item)}>Add To Quotation </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </>
                                     ))}
+
+
+
+
+
                                 </div>
+
                             </div>
-
-
                         </>
+
                     </div>
                 </div>
             </div>

@@ -7,6 +7,10 @@ export const API_BASE_URL = "https://www.indianfilms.in/SparkAPI/api/"; //  "htt
 export const Image_BASE_URL = "https://www.indianfilms.in/SparkAPI/"; //  "https://localhost:7277/api/";
 
 
+// export const API_BASE_URL = "https://www.indianfilms.in/SparkAPI/api/"; //  "https://localhost:7277/api/";
+// export const Image_BASE_URL = "https://www.indianfilms.in/SparkAPI/"; //  "https://localhost:7277/api/";
+
+
 
 export const endpoints = {
   login: "Login/Login",
@@ -71,4 +75,12 @@ export const endpoints = {
   SaveCartDetail:"SaveCartDetail",
   GetCartDetailByLoginId:"GetCartDetailByLoginId",
 
+  SaveProductOrder:"ProductOrder/SaveProductOrder",
+  GetProductOrder:"ProductOrder/GetProductOrder",
+  GetProductOrderByOrderId:"ProductOrder/GetProductOrderByOrderId",
+  GetClubMembershipByLoginId:"ClubMembership/GetClubMembershipByLoginId",
+  GetQuatationByLoginId:"Quatation/GetQuatationByLoginId",
+  GetProductOrderByLoginId:"ProductOrder/GetProductOrderByLoginId",
+
+  SentTOQuotation:"ProductOrder/SentTOQuotation",
 };

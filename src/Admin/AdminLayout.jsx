@@ -35,7 +35,6 @@ const AdminLayout = ({ children }) => {
 
       {/* Main Content Area */}
       <div>
-
       </div>
     </div>
   );
