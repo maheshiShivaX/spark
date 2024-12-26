@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import AdminLayout from "./AdminLayout";
 import "../Admin/admin.css";
 import { endpoints } from "../_config";
-import { get } from "../_services/apiService";
+import { get, post } from "../_services/apiService";
 import { Link } from "react-router-dom";
 // import {Html } from 'react-pdf-html';
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
+import { toast } from "react-toastify";
+import { PDFDocument } from 'pdf-lib';
 
 
 const ProductQuotation = () => {
@@ -18,6 +20,7 @@ const ProductQuotation = () => {
     const [productOrderItemData, setroductOrderItemData] = useState();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [orderId, setOrderId] = useState(0);
     const pdfRef = useRef();
 
     const GetProductOrder = async () => {
@@ -95,29 +98,173 @@ const ProductQuotation = () => {
     };
 
 
-
     const generatePdf = async () => {
         const element = pdfRef.current;
-        const canvas = await html2canvas(element, {
-            scale: 2, // Improves quality
-        });
+        const canvas = await html2canvas(element, { scale: 2 });
+
+        // Ensure the canvas is properly generated
+        if (!canvas) {
+            toast.error("Failed to capture the content.");
+            return;
+        }
+
         const imgData = canvas.toDataURL("image/png");
         const pdf = new jsPDF("p", "mm", "a4");
 
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
+        // Optionally, ensure you're not cutting off content if it's too large
+        const maxHeight = pdf.internal.pageSize.getHeight();
+        if (pdfHeight > maxHeight) {
+            pdfHeight = maxHeight;
+        }
+
         pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        const pdfBlob = pdf.output("blob");
+
+        // setFormData({
+        //     ...formData,
+        //     file: pdfBlob,
+        //     orderId: 19, // Example of setting orderId, ensure it's dynamic if needed
+        // });
+
+
+
         pdf.save("download.pdf");
     };
+
+    const [formData, setFormData] = useState({
+        orderId: orderId,
+        file: '',
+    });
+
+    //     setFormData(prevState => ({
+    //         ...prevState,
+    //         [name]: e.target.files[0], // Handle file uploads
+    //     }));
+    // } else {
+
+    const generateEncryptedPdf = (pdf, password) => {
+        return new Promise((resolve, reject) => {
+            // Encrypt the PDF with jsPDF and password
+            const encryptedPdfBlob = pdf.output('blob', { password: password });
+            resolve(encryptedPdfBlob);
+        });
+    };
+
+    const onSentTOQuotation = async () => {
+
+        const element = pdfRef.current;
+        const canvas = await html2canvas(element, { scale: 2 });
+
+        // Ensure the canvas is properly generated
+        if (!canvas) {
+            toast.error("Failed to capture the content.");
+            return;
+        }
+
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        let pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        // Optionally, ensure you're not cutting off content if it's too large
+        const maxHeight = pdf.internal.pageSize.getHeight();
+        if (pdfHeight > maxHeight) {
+            pdfHeight = maxHeight;
+        }
+
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+        // Generate PDF Blob
+         const pdfBlob = pdf.output("blob");
+
+
+        try {
+
+            // Now use pdf-lib to add password protection
+            // const existingPdfBytes = await pdfBlob.arrayBuffer();
+            // const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+            // // Set a password for the PDF
+            // const password = '123456';  // Example password
+            // const encryptedPdfBytes = await pdfDoc.save({
+            //     useEncryption: true,
+            //     userPassword: password,
+            //     ownerPassword: password,
+            //     permissions: {
+            //         print: true,
+            //         modify: false,
+            //         copy: false,
+            //         annotate: false
+            //     }
+            // });
+
+            // // Create a Blob from the encrypted PDF
+            // const encryptedPdfBlob = new Blob([encryptedPdfBytes], { type: 'application/pdf' });
+
+
+
+            //         const password = "123456";
+
+            //         // Add encryption to the generated PDF
+            //         const encryptedPdfBlob = pdf.output("blob", { password: password });
+
+
+
+            const formDataToSend = new FormData();
+
+            // Append the encrypted PDF blob
+            formDataToSend.append("file", pdfBlob); // Append the generated PDF Blob
+            formDataToSend.append("orderId", orderId); // Append the order ID or any other data you need
+
+            console.log('Form data to send:', formDataToSend);
+
+            // Send form data to backend
+            const response = await post(endpoints.SentTOQuotation, formDataToSend);
+
+            if (response.isSuccess === 200) {
+                toast.success("Quotation Sent Successfully");
+            } else {
+                toast.error("Failed to submit form data");
+            }
+
+
+        } catch (error) {
+            console.error("Error generating encrypted PDF:", error);
+            toast.error("Please try again later.");
+        }
+    };
+
+    // useEffect(() => {
+    //     setFormData({
+    //         ...formData,
+    //         file: pdfBlob,
+    //         // orderId: 19, // Example of setting orderId, ensure it's dynamic if needed
+    //     });
+    // }, []);
+
+
 
 
     const modelToggle = (modelname, status, item) => {
         // Get the modal element by ID
 
         setroductOrderItemData(item);
+        //  orderId= item.orderId;
         console.log('item', item);
         console.log('item1', productOrderItemData);
+
+        setFormData({
+            ...formData,
+            orderId: item.orderId, // Example of setting orderId, ensure it's dynamic if needed
+        });
+
+        setOrderId(item.orderId);
+
+        // orderId= productOrderItemData.orderId;
         const modalElement = document.getElementById(modelname);
         let modal = window.bootstrap.Modal.getInstance(modalElement);
         if (!modal) {
@@ -270,7 +417,7 @@ const ProductQuotation = () => {
                                     </defs>
                                 </svg>
                                 </span>
-                                <span onClick={generatePdf}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
+                                <span onClick={onSentTOQuotation}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
                                     <g clip-path="url(#clip0_701_93)">
                                         <path d="M31.9783 3.22965C32.1342 2.50347 31.4223 1.89117 30.7278 2.15616L0.603121 13.6561C0.240562 13.7945 0.000751757 14.142 1.76421e-06 14.53C-0.000748228 14.9182 0.237687 15.2666 0.599746 15.4064L9.06235 18.6748V28.9693C9.06235 29.4035 9.36054 29.7809 9.78303 29.8813C10.2027 29.9811 10.6403 29.7815 10.8371 29.3911L14.3371 22.4457L22.8785 28.7846C23.3981 29.1702 24.1449 28.925 24.334 28.3053C32.3088 2.15823 31.9641 3.29534 31.9783 3.22965ZM24.542 6.5245L9.86697 16.9756L3.55278 14.537L24.542 6.5245ZM10.9373 18.5151L23.729 9.40541C12.7219 21.0172 13.2968 20.406 13.2488 20.4706C13.1775 20.5665 13.3729 20.1926 10.9373 25.0257V18.5151ZM22.9283 26.4867L15.4099 20.907L29.0042 6.56575L22.9283 26.4867Z" fill="#7e7e7e" />
                                     </g>
@@ -282,7 +429,7 @@ const ProductQuotation = () => {
                                 </svg>
 
                                 </span>
-                                <span className="btn-close" style={{margin:'0'}} data-bs-dismiss="modal" aria-label="Close"></span>
+                                <span className="btn-close" style={{ margin: '0' }} data-bs-dismiss="modal" aria-label="Close"></span>
                             </div>
                         </div>
                         <div class="modal-body">
@@ -388,7 +535,7 @@ const ProductQuotation = () => {
                                                         </div>
 
                                                         <div class="footer1 text-center mt-4">
-                                                        <p><strong>Total: ${productOrderItemData.orderAmount}</strong></p>
+                                                            <p><strong>Total: ${productOrderItemData.orderAmount}</strong></p>
                                                         </div>
 
                                                         <div class="signature">

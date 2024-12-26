@@ -4,7 +4,7 @@ import { baseurl, API_BASE_URL } from '../_config';
 // Base configuration
 const apiClient = axios.create({
     baseURL: process.env.REACT_APP_API_BASE_URL || API_BASE_URL, // 'https://example.com/api', // Use your base URL
-    timeout: 10000, // Optional: Set a timeout for requests
+    timeout: 550000, // Optional: Set a timeout for requests
 });
 
 // Request interceptor for adding headers

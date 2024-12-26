@@ -77,4 +77,6 @@ export const endpoints = {
   GetClubMembershipByLoginId:"ClubMembership/GetClubMembershipByLoginId",
   GetQuatationByLoginId:"Quatation/GetQuatationByLoginId",
   GetProductOrderByLoginId:"ProductOrder/GetProductOrderByLoginId",
+
+  SentTOQuotation:"ProductOrder/SentTOQuotation",
 };
