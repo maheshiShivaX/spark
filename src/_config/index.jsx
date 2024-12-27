@@ -1,10 +1,10 @@
 
 
-// export const API_BASE_URL = "https://localhost:7207/api/"; //  "https://localhost:7277/api/";
-// export const Image_BASE_URL = "https://localhost:7207/"; //  "https://localhost:7277/api/";
+export const API_BASE_URL = "https://localhost:7207/api/"; //  "https://localhost:7277/api/";
+export const Image_BASE_URL = "https://localhost:7207/"; //  "https://localhost:7277/api/";
 
-export const API_BASE_URL = "https://www.indianfilms.in/SparkAPI/api/"; //  "https://localhost:7277/api/";
-export const Image_BASE_URL = "https://www.indianfilms.in/SparkAPI/"; //  "https://localhost:7277/api/";
+// export const API_BASE_URL = "https://www.indianfilms.in/SparkAPI/api/"; //  "https://localhost:7277/api/";
+// export const Image_BASE_URL = "https://www.indianfilms.in/SparkAPI/"; //  "https://localhost:7277/api/";
 
 
 // export const API_BASE_URL = "https://www.indianfilms.in/SparkAPI/api/"; //  "https://localhost:7277/api/";

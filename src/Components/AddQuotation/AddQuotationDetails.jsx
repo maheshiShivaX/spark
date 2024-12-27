@@ -165,10 +165,11 @@ const AddQuotationDetails = () => {
                                                         required.</li>
                                                 </ul>
                                             </div>
-                                            <div className="add_quotation_btn">
+                                           
+                                        </div>
+                                        <div className="add_quotation_btn accordion-body">
                                                 <a onClick={onSubmitQuotation} >Get Instant Quote Now </a>
                                             </div>
-                                        </div>
                                     </div>
 
 
