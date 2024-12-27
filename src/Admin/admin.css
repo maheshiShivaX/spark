@@ -100,7 +100,7 @@
 .dashboard_left_bg {
     background: #204C6D;
     padding: 40px 40px;
-    margin-top: -90px;
+    /* margin-top: -90px; */
     /* margin-right: 40px;
     height: 1373px;
     width: 18%;
@@ -260,7 +260,7 @@
 }
 
 .dashboard_add_quotation_wepper {
-    padding-top: 55px;
+    padding-top: 130px;
     width: 100%;
 }
 
@@ -752,7 +752,7 @@ input[type="file"] {
 
 .product_wepper {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 130px;
     margin-right: 0px;
 }
 
@@ -790,8 +790,8 @@ input[type="file"] {
 
 
 .product_hedding_table_main {
-    background: #204C6D;
-    padding: 15px;
+    /* background: #204C6D;
+    padding: 15px; */
     color: #fff;
 }
 
@@ -893,14 +893,9 @@ td {
 }
 
 
-
-
-
-
-
-
 .tabs-container {
     width: 100%;
+    margin-top: 118px;
 }
 
 .tabs {
@@ -934,6 +929,26 @@ td {
     color: #333;
 }
 
+.tab-content .product_wepper {
+    margin-top: 20px;
+}
+
+.tab_hedding {
+    margin-bottom: 20px;
+}
+
+.back_color a {
+    color: #000;
+}
+
+.modal-backdrop {
+    height: auto;
+}
+
+.modal-backdrop.show {
+    height: auto;
+}
+
 .product-card {
     display: flex;
     justify-content: space-between;
@@ -953,6 +968,8 @@ td {
     margin-bottom: 8px;
     font-size: 14px;
     color: #333;
+    border: .5px solid gray;
+    padding: 6px;
 }
 
 .edit-icon button {
@@ -965,6 +982,36 @@ td {
     cursor: pointer;
 }
 
+.quotation_user_deatlis {
+    padding: 0 20px;
+}
+
+.send_wepper{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    width: 100%;
+}
+
+.quotation_user_deatlis .user_deatlis .col-lg-3 {
+    border: solid 1px gray;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.quotation_user_deatlis .user_deatlis .col-lg-9 {
+    border: solid 1px gray;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.quotation_user_deatlis .user_deatlis .col-lg-6 {
+    border: solid 1px gray;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
 .edit-icon button:hover {
     background-color: #0056b3;
 }
@@ -972,13 +1019,16 @@ td {
 
 .sidebar-toggle {
     position: fixed;
-    top: 10px;
+    top: 0;
     left: 10px;
-    background: #fff;
+    background: transparent !important;
     border: none;
     z-index: 1000;
     font-size: 24px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24%;
 }
 
 .dashboard_left_bg {
@@ -1003,6 +1053,46 @@ td {
 .left_menu_wepper {
     overflow-y: auto;
     height: calc(100% - 60px);
+}
+
+.dashboard_hedaer {
+    position: fixed;
+    width: 100%;
+}
+
+@media (min-width:1024px) and (max-width:1441px) {
+
+    .dashboard_container {
+        padding: 0;
+    }
+
+    .dashboard_inner {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .dashboard_tab_wepper {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (min-width:991px) and (max-width:1023px) {
+    .dashboard_inner {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .dashboard_tab_wepper {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .sidebar-toggle svg {
+        margin-top: 0 !important;
+    }
 }
 
 @media (min-width: 1441px) {
@@ -1044,6 +1134,22 @@ td {
     .sidebar-toggle svg {
         margin-top: 24px;
     }
+
 }
 
-@media (max-width:768px) {}
+@media (max-width:768px) {
+    .dashboard_inner {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .dashboard_tab_wepper {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .sidebar-toggle svg {
+        margin-top: 0 !important;
+    }
+}

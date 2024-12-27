@@ -204,7 +204,7 @@ const ProductSubCategory = () => {
         modelToggle('modeldata', true);
     }
 
-    
+
 
     const onDelete = async (id) => {
 
@@ -250,7 +250,7 @@ const ProductSubCategory = () => {
                             </div>
                             <div className="col-lg-7">
                                 <div className="row align-items-center">
-                                    <div className="col-lg-6 search_input">
+                                    <div className="col-lg-6 col-sm-6 col-md-6 search_input">
                                         <input
                                             type="text"
                                             placeholder="Search..."
@@ -259,9 +259,8 @@ const ProductSubCategory = () => {
                                             onChange={handleSearchChange} // Handle search input change
                                         />
                                     </div>
-                                    <div className="col-lg-4 add_subcategory">
-                                       
-                                        <button type="button" className="btn btn-primary" onClick={() => modelToggle('modeldata', true)} >
+                                    <div className="col-lg-4 col-sm-6 col-md-6 add_subcategory">
+                                        <button type="button" className="all_sumbit_button" onClick={() => modelToggle('modeldata', true)} >
                                             + Add Product Sub Category      </button>
                                     </div>
                                 </div>
@@ -394,7 +393,7 @@ const ProductSubCategory = () => {
 
                                 <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                     <div className="send_quote_wepper">
-                                         <select name="productCategoryId" id="productCategoryId" className="form-control" value={formData.productCategoryId} onChange={handleChange} required >
+                                        <select name="productCategoryId" id="productCategoryId" className="form-control" value={formData.productCategoryId} onChange={handleChange} required >
                                             <option value="0" className="option">Select Category</option>
                                             {productdata?.map((item, i) => (
                                                 <option key={item.productCategoryId} value={item.productCategoryId} className="option">{item?.categoryName}</option>
@@ -425,8 +424,8 @@ const ProductSubCategory = () => {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button> */}
+                                    <button type="submit" class="all_sumbit_button">Submit</button>
                                 </div>
                             </form>
                         </div>

@@ -105,7 +105,7 @@ const ProductDetail = () => {
                     {/* Tabs */}
                     <div className="tabs">
                         <div style={{ lineHeight: '3' }}>
-                            <div> <Link to={'/admin/product'} >   {`<< Back`} </Link> </div>
+                            <div className="back_color"> <Link to={'/admin/product'} >   {`<< Back`} </Link> </div>
                         </div>
                         <button
                             className={`tab ${activeTab === "details" ? "active" : ""}`}

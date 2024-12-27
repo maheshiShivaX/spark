@@ -308,7 +308,7 @@ const Product = () => {
                             </div>
                             <div className="col-lg-7">
                                 <div className="row align-items-center">
-                                    <div className="col-lg-6 search_input">
+                                    <div className="col-lg-6 col-md-6 col-sm-6 search_input">
                                         <input
                                             type="text"
                                             placeholder="Search..."
@@ -317,9 +317,9 @@ const Product = () => {
                                             onChange={handleSearchChange} // Handle search input change
                                         />
                                     </div>
-                                    <div className="col-lg-4 add_subcategory">
+                                    <div className="col-lg-4 col-md-6 col-sm-6 add_subcategory">
 
-                                        <button type="button" className="btn btn-primary" onClick={() => modelToggle('modeldata', true)} >
+                                        <button type="button" className="all_sumbit_button" onClick={() => modelToggle('modeldata', true)} >
                                             + Add Product      </button>
                                     </div>
 
@@ -328,7 +328,7 @@ const Product = () => {
                         </div>
 
                         {/* Table Section */}
-                        <div className="row mt-3 product_hedding_table_main">
+                        <div className=" mt-3 product_hedding_table_main" style={{ overflowX: 'auto' }}>
                             <table className="table table-bordered">
                                 <thead>
                                     <tr>
@@ -535,8 +535,8 @@ const Product = () => {
 
 
                                 <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-primary" >
+                                    {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                                    <button type="submit" className="all_sumbit_button" >
                                         Submit
                                     </button>
                                 </div>

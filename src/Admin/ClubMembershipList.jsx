@@ -269,8 +269,8 @@ const ClubMembershipList = () => {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                            <button type="button" class="btn btn-primary">Summit</button>
+                            {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button> */}
+                            <button type="button" class="all_sumbit_button">Summit</button>
                         </div>
                     </div>
                 </div>

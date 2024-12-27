@@ -245,13 +245,13 @@ const ProductImages = (props) => {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-5">
-                            <div className="product_hedding">
+                            <div className="product_hedding tab_hedding">
                                 <h2>Product Image</h2>
                             </div>
                         </div>
                         <div className="col-lg-7">
                             <div className="row align-items-center">
-                                <div className="col-lg-6 search_input">
+                                <div className="col-lg-6 col-md-6 col-sm-6 search_input">
                                     <input
                                         type="text"
                                         placeholder="Search..."
@@ -260,9 +260,9 @@ const ProductImages = (props) => {
                                         onChange={handleSearchChange} // Handle search input change
                                     />
                                 </div>
-                                <div className="col-lg-4 add_subcategory">
+                                <div className="col-lg-4  col-md-6 col-sm-6 add_subcategory">
 
-                                    <button type="button" className="btn btn-primary" onClick={() => modelToggle('modeldata', true)} >
+                                    <button type="button" className="all_sumbit_button" onClick={() => modelToggle('modeldata', true)} >
                                         + Add Product Image     </button>
                                 </div>
                             </div>
@@ -354,8 +354,8 @@ const ProductImages = (props) => {
 
 
                                 <div className="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button> */}
+                                    <button type="submit" class="all_sumbit_button">Submit</button>
                                 </div>
                             </form>
                         </div>
