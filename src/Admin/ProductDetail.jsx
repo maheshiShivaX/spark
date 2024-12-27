@@ -77,7 +77,7 @@ const ProductDetail = () => {
                                     </div>
                                 </div>) : null}
                             <div className="edit-icon">
-                                <button>Edit</button>
+                                {/* <button>Edit</button> */}
                             </div>
                         </div>
                     </div>

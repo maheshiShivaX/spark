@@ -70,8 +70,11 @@ const Login = () => {
                 //     position: "top-right",
                 //     autoClose: 3000,
                 // });
+                
 
+                localStorage.setItem("username", response.data[0].firstName);
                 localStorage.setItem("roleId", response.data[0].roleId);
+                console.log(response.data)
                 if (response.data[0].roleId == 1) {
                     navigate("/admin/dashboard");
                 } else {

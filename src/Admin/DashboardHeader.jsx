@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
 const DashboardHeader = () => {
-    
+
 
     const location = useLocation();
 
@@ -15,6 +15,22 @@ const DashboardHeader = () => {
 
         return 'Dashboard'; // Default title
     };
+    // const username = '';
+     const userType = '';
+    const role = localStorage.getItem("roleId");
+    const username = localStorage.getItem("username");
+    console.log(userType,role,username )
+ 
+
+
+    if (role !=null &&  role === 1) {
+        userType = 'Admin';
+    }
+
+     if (role !=null &&  role === 2)   {
+        userType = 'Sparks User';
+    }
+
 
     const [flag, setFlag] = useState("images/country.png");
     const countries = [
@@ -62,10 +78,10 @@ const DashboardHeader = () => {
                         </span>
                     </div>
                     <div className="admin_profile_wepper">
-                        <img src="images/admin-icon.png" alt="" />
+                        <img src="images/profile.png" alt="" />
                         <div className="profile_name">
-                            <h3>Ishivax</h3>
-                            <p>Admin</p>
+                            <h3>{username ?  username: null}</h3>
+                            <p>{role==1 ? 'Admin' :'Sparks User'}</p>
                         </div>
                         {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

@@ -270,7 +270,7 @@ const UserProductQuotation = () => {
                                     </defs>
                                 </svg>
                                 </span>
-                                <span onClick={generatePdf}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
+                                {/* <span onClick={generatePdf}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
                                     <g clip-path="url(#clip0_701_93)">
                                         <path d="M31.9783 3.22965C32.1342 2.50347 31.4223 1.89117 30.7278 2.15616L0.603121 13.6561C0.240562 13.7945 0.000751757 14.142 1.76421e-06 14.53C-0.000748228 14.9182 0.237687 15.2666 0.599746 15.4064L9.06235 18.6748V28.9693C9.06235 29.4035 9.36054 29.7809 9.78303 29.8813C10.2027 29.9811 10.6403 29.7815 10.8371 29.3911L14.3371 22.4457L22.8785 28.7846C23.3981 29.1702 24.1449 28.925 24.334 28.3053C32.3088 2.15823 31.9641 3.29534 31.9783 3.22965ZM24.542 6.5245L9.86697 16.9756L3.55278 14.537L24.542 6.5245ZM10.9373 18.5151L23.729 9.40541C12.7219 21.0172 13.2968 20.406 13.2488 20.4706C13.1775 20.5665 13.3729 20.1926 10.9373 25.0257V18.5151ZM22.9283 26.4867L15.4099 20.907L29.0042 6.56575L22.9283 26.4867Z" fill="#7e7e7e" />
                                     </g>
@@ -281,7 +281,7 @@ const UserProductQuotation = () => {
                                     </defs>
                                 </svg>
 
-                                </span>
+                                </span> */}
                                 <span className="btn-close" style={{ margin: '0' }} data-bs-dismiss="modal" aria-label="Close"></span>
                             </div>
                         </div>
@@ -357,9 +357,9 @@ const UserProductQuotation = () => {
                                                                         {item.productName}<br />
                                                                         <small>Categories: {item.productSubCategoryName}, {item.categoryName}</small>
                                                                     </div>
-                                                                    <div class="price">{item.unitPrice}</div>
+                                                                    <div class="price">-</div>
                                                                     <div class="quantity">{item.quantity}</div>
-                                                                    <div class="total">${item.totalAmount}</div>
+                                                                    <div class="total">-</div>
                                                                 </div>
 
                                                             ))}
@@ -380,22 +380,22 @@ const UserProductQuotation = () => {
                                                                         do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                                                 </div>
                                                                 <div class="right-col">
-                                                                    <p><strong>SUBTOTAL:</strong> ${productOrderItemData.totalAmount}</p>
+                                                                    {/* <p><strong>SUBTOTAL:</strong> ${productOrderItemData.totalAmount}</p> */}
                                                                     {/* <p><strong>TAX (10%):</strong> $100.00</p>
                                                                 <p><strong>DISCOUNT:</strong> $0.00</p> */}
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="footer text-center mt-4">
-                                                            <p><strong>Total: ${productOrderItemData.orderAmount}</strong></p>
+                                                        <div class="footer1 text-center mt-4">
+                                                            {/* <p><strong>Total: ${productOrderItemData.orderAmount}</strong></p> */}
                                                         </div>
 
                                                         <div class="signature">
                                                             <p>AUTHORIZED SIGN</p>
                                                         </div>
 
-                                                        <div class="footer text-center mt-4">
+                                                        <div class="footer1 text-center mt-4">
                                                             <p>For any questions contact us at:</p>
                                                             <p><a href="mailto:Help@sparks-hvac.com">Help@sparks-hvac.com</a></p>
                                                         </div>

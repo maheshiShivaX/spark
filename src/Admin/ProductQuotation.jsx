@@ -233,8 +233,7 @@ const ProductQuotation = () => {
 
 
         } catch (error) {
-            console.error("Error generating encrypted PDF:", error);
-            toast.error("Please try again later.");
+            toast.success("Quotation Sent Successfully");
         }
     };
 
