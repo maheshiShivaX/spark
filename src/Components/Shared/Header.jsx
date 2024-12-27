@@ -168,8 +168,9 @@ const Header = () => {
                                     {/*  <img src="images/add-to-cart-dark.svg" alt="" className="mobile_show" />*/}
 
                                     <div className='totalQuantity_adddynemic'>
-                                        <img src="images/add-to-cart.svg" alt="" className="destop_show" />
-                                        <span>{`${totalQuantity}`}</span>
+                                         <Link to="/add-quotation">  <img src="images/add-to-cart.svg" alt="" className="destop_show" />
+                                       <span>{`${totalQuantity}`}</span></Link>
+
                                         <Link to="/login"> <img src="images/User-profile-icon.svg" alt="" className="destop_show" /></Link>
                                     </div>
 
