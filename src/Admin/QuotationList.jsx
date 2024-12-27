@@ -286,83 +286,83 @@ const QuotationList = () => {
 
                             {quatationItemData != null ?
 
-                                <div className="">
+                                <div className="quotation_user_deatlis">
 
                                     <div className="row user_deatlis">
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-3">
                                             <strong>Name: </strong>
 
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-3">
                                             {quatationItemData.firstName} {quatationItemData.lastName}
                                         </div>
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Email Id: </strong>
 
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             {quatationItemData?.emailId}
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Contact No: </strong>
 
                                         </div>
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9 col-md-6">
                                             {quatationItemData?.contactNo}
                                         </div>
 
 
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Address:</strong>
                                         </div>
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9 col-md-6">
                                             {quatationItemData?.address}
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Service Type:</strong>
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             {quatationItemData?.serviceName}
                                         </div>
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Size Type Name:</strong>
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             {quatationItemData?.sizeTypeName}
                                         </div>
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Product Detail:</strong>
                                         </div>
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9 col-md-6">
                                             {quatationItemData?.productDetail}
                                         </div>
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Referral Source:</strong>
                                         </div>
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9 col-md-6">
                                             {quatationItemData?.referralSource}
                                         </div>
 
 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-3 col-md-6 col-sm-6">
                                             <strong>Additional Message:</strong>
                                         </div>
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9 col-md-6">
                                             {quatationItemData?.additionalMsg}
                                         </div>
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 col-md-6 col-sm-6">
                                             <strong>Product Path:</strong>
                                         </div>
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 col-md-6 col-sm-6">
                                             <strong>Serial Image Path:</strong>
                                         </div>
 
-                                        <div className="col-lg-6"> <img
+                                        <div className="col-lg-6 col-md-6 col-sm-6"> <img
                                             src={`${Image_BASE_URL}${quatationItemData.productPath}`}
                                             alt="Product"
                                             style={{ width: "150px", height: "150px" }} />
@@ -370,7 +370,7 @@ const QuotationList = () => {
 
 
 
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 col-md-6 col-sm-6">
 
 
                                             <img

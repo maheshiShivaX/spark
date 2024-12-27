@@ -232,7 +232,7 @@ const ProductCategory = () => {
                             </div>
                             <div className="col-lg-7">
                                 <div className="row align-items-center">
-                                    <div className="col-lg-6 search_input">
+                                    <div className="col-lg-6 col-md-6 col-sm-6 search_input">
                                         <input
                                             type="text"
                                             placeholder="Search..."
@@ -241,9 +241,9 @@ const ProductCategory = () => {
                                             onChange={handleSearchChange} // Handle search input change
                                         />
                                     </div>
-                                    <div className="col-lg-4 add_subcategory">
+                                    <div className="col-lg-4 col-md-6 col-sm-6 add_subcategory">
                                        
-                                        <button type="button" className="btn btn-primary" onClick={() => modelToggle('modeldata', true)} >
+                                        <button type="button" className="all_sumbit_button" onClick={() => modelToggle('modeldata', true)} >
                                             + Add Product Category      </button>
                                     </div>
 
@@ -364,7 +364,7 @@ const ProductCategory = () => {
             </AdminLayout>
             {/* Modal */}
             <div>
-                <div className="modal fade" id="modeldata" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal" id="modeldata" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -397,8 +397,8 @@ const ProductCategory = () => {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-primary" >
+                                    {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                                    <button type="submit" className="all_sumbit_button" >
                                         Submit
                                     </button>
                                 </div>
